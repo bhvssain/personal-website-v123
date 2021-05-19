@@ -81,7 +81,7 @@ function soundHoverThing() {
 		.on("mouseenter", function() {
 			pauseAudio();
 
-			const sounds = logoSounds[Math.floor(Math.random()*logoSounds.length)];
+			const sounds = logoSounds[Math.floor(Math.random() * logoSounds.length)];
 			$(`#snd-${sounds}`)[0].play();
 		});
 }
