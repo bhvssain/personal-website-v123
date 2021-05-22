@@ -21,9 +21,9 @@ body {
 =================== */
 h1 {
     font-family: "Times New Roman", serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: normal;
-    letter-spacing: 2.5px;
+    letter-spacing: 2.1px;
     margin: 0 0 20px;
 }
 
@@ -208,7 +208,7 @@ blockquote span.author {
 }
 
 #main-nav {
-    height: calc(100% - 95px);
+    height: calc(100% - 75px);
     margin-top: 35px;
 }
 
@@ -287,7 +287,6 @@ nav ul {
 
 #nav-wrapper nav {
     text-align: center;
-    width: 100%;
 }
 
 #nav-wrapper li {
@@ -341,6 +340,15 @@ nav ul {
     display: inline-block;
     border-top: 1px solid #fff;
     padding: 10px;
+}
+
+#secondary-nav li:nth-child(2),
+#secondary-nav li:nth-child(3),
+#secondary-nav li:nth-child(4),
+#secondary-nav li:nth-child(5),
+#secondary-nav li:nth-child(6),
+#secondary-nav li:nth-child(7) {
+    display: none;
 }
 
 #secondary-nav a {
@@ -518,8 +526,28 @@ nav ul {
 }
 
 @media only screen and (min-width: 769px) {
+    h1 {
+        font-size: 24px;
+        letter-spacing: 2.5px;
+    }
+
     #text {
         padding: 20px 50px 50px 100px;
+    }
+
+    #main-nav {
+        height: calc(100% - 95px);
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #secondary-nav li:nth-child(2),
+    #secondary-nav li:nth-child(3),
+    #secondary-nav li:nth-child(4),
+    #secondary-nav li:nth-child(5),
+    #secondary-nav li:nth-child(6),
+    #secondary-nav li:nth-child(7) {
+        display: block;
     }
 }
 
