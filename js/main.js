@@ -66,24 +66,29 @@ function pauseAudio() {
 }
 
 function soundHoverThing() {
-	$("[data-sound]")
-		.on("mouseenter", function() {
-			pauseAudio();
-			
-			const datasound = $(this).attr("data-sound");
-			$(`#snd-${datasound}`)[0].play();
-		})
-		.on("mouseleave", pauseAudio);
+	var windowWidth = $(window).width();
 
-	// Two sounds for my Logo
-	const logoSounds = ["billyboy", "dude"];
-	$("[data-sound='billyboy']")
-		.on("mouseenter", function() {
-			pauseAudio();
+	if (windowWidth > 1024) {
+		$("[data-sound]")
+			.on("mouseenter", function() {
+				pauseAudio();
+				
+				const datasound = $(this).attr("data-sound");
+				$(`#snd-${datasound}`)[0].play();
+			})
+			.on("mouseleave", pauseAudio);
 
-			const sounds = logoSounds[Math.floor(Math.random() * logoSounds.length)];
-			$(`#snd-${sounds}`)[0].play();
-		});
+		// Two sounds for my Logo
+		const logoSounds = ["billyboy", "dude"];
+		$("[data-sound='billyboy']")
+			.on("mouseenter", function() {
+				pauseAudio();
+
+				const sounds = logoSounds[Math.floor(Math.random() * logoSounds.length)];
+				$(`#snd-${sounds}`)[0].play();
+			});
+	}
+	
 }
 
 function gifHoverThing() {
@@ -100,6 +105,10 @@ function gifHoverThing() {
 
 $(function() {
 	navThing();
+	soundHoverThing();
 	gifHoverThing();
+});
+
+$(window).resize(function() {
 	soundHoverThing();
 });
