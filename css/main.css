@@ -42,6 +42,26 @@ h3 {
     font-weight: bold;
 }
 
+h2 {
+    margin: 0 0 10px;
+    display: inline-block;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 3px;
+    height: 8px;
+    width: 100%;
+    background-color: rgb(255 0 0 / 20%);
+}
+
+h2 span {
+    font-size: 14px;
+}
+
 #text p,
 #text li {
     font-family: Arial, sans-serif;
@@ -79,14 +99,16 @@ p.notice {
     padding: 10px;
 }
 
-.subsection__text blockquote {
+blockquote {
     display: block;
+    border: 3px dashed #f3f3f3;
+    margin: 0 0 15px;
+    padding: 25px;
+    max-width: 100%;
 }
 
-blockquote {
-    border: 3px dashed #f3f3f3;
-    margin: 0 15px 15px 0;
-    padding: 25px;
+blockquote:last-of-type {
+    margin-bottom: 40px;
 }
 
 blockquote p::before {
@@ -456,36 +478,6 @@ nav ul {
 }
 
 /* ==================
-    SUBSECTION
-=================== */
-.subsection {
-    margin: 0 0 20px;
-}
-
-.subsection h2 {
-    margin: 0 0 10px;
-}
-
-.subsection p {
-    margin: 0 0 30px;
-}
-
-.subsection h2 {
-    display: inline-block;
-    position: relative;
-}
-
-.subsection h2::after {
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: 3px;
-    height: 8px;
-    width: 100%;
-    background-color: rgb(255 0 0 / 20%);
-}
-
-/* ==================
     PAGES
 =================== */
 #page-home #media {
@@ -572,12 +564,12 @@ nav ul {
     #text p,
     #text li {
         font-size: 18px;
-        line-height: 38px;
+        line-height: 32px;
     }
 
     #text p.intro {
         font-size: 20px;
-        line-height: 38px;
+        line-height: 32px;
     }
 
     #text blockquote p {
@@ -592,7 +584,7 @@ nav ul {
         font-size: 30px;
     }
 
-    .subsection__text blockquote {
-        display: inline-block;
+    blockquote {
+        max-width: 50%;
     }
 }
