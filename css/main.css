@@ -255,10 +255,6 @@ blockquote span.author {
     font-weight: bold;
 }
 
-#ham-menu img {
-    width: 40px;
-}
-
 #main-nav > ul {
     display: flex;
     justify-content: center;
