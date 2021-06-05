@@ -473,6 +473,10 @@ nav ul {
     width: 40%;
 }
 
+.tetris {
+    display: none;
+}
+
 /* ==================
     PAGES
 =================== */
@@ -545,6 +549,29 @@ nav ul {
     #secondary-nav li:nth-child(6),
     #secondary-nav li:nth-child(7) {
         display: block;
+    }
+
+    .tetris {
+        display: block;
+    }
+
+    .game__actions {
+        margin-top: 20px;
+    }
+
+    .game__button {
+        border: 1px solid black;
+        background-color: rgba(255, 147, 61, 1);
+        cursor: pointer;
+        padding: 10px 15px;
+        font-weight: bold;
+        color: black;
+        transition: all 250ms;
+    }
+
+    .game__button:hover {
+        background-color: white;
+        color: black;
     }
 }
 

@@ -2,7 +2,8 @@ const audio = document.getElementsByTagName("audio"),
 	$hamMenu = $("#ham-menu"),
 	$media = $("#media"),
 	$navWrapper = $("#nav-wrapper"),
-	$closeNav = $("#close-nav");
+	$closeNav = $("#close-nav"),
+	$game = $(".game");
 
 const CLASSES = {
 	open: "open",
@@ -96,10 +97,32 @@ function gifHoverThing() {
 		});
 }
 
+function gameThing() {
+	if ($game.length > 0) {
+		function btnHandler(className, action) {
+			if ($(className).length > 0) {
+				$(className).on("click", function() {
+					$game.blockrain(action);
+				})
+			}
+		}
+
+		$game.blockrain({
+			theme: "modern",
+			controls: true,
+		});
+
+		btnHandler("#game__restart", "restart");
+		btnHandler("#game__pause", "pause");
+		btnHandler("#game__resume", "resume");
+	}
+}
+
 $(function() {
 	navThing();
 	soundHoverThing();
 	gifHoverThing();
+	gameThing();
 });
 
 $(window).resize(function() {
