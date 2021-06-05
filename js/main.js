@@ -3,7 +3,6 @@ const audio = document.getElementsByTagName("audio"),
 	$media = $("#media"),
 	$navWrapper = $("#nav-wrapper"),
 	$closeNav = $("#close-nav");
-	// $project = $(".project");
 
 const CLASSES = {
 	open: "open",
@@ -34,13 +33,6 @@ function navThing() {
 				$navWrapper.find("li").removeClass(CLASSES.closed);
 				$hamMenu.fadeIn(FADE_SPEEDS.normal)
 			}, FADE_SPEEDS.normal);
-
-			// $hamMenu.fadeIn(FADE_SPEEDS.normal, function() {
-			// 	if ($project.length) {
-			// 		$media.css("background-image", "");
-			// 		$project.fadeIn(FADE_SPEEDS.normal);
-			// 	};
-			// });
 		});
 	});
 
@@ -66,9 +58,10 @@ function pauseAudio() {
 }
 
 function soundHoverThing() {
-	var windowWidth = $(window).width();
+	const windowWidth = $(window).width();
+	const tabletLandscape = 1024;
 
-	if (windowWidth > 1024) {
+	if (windowWidth > tabletLandscape) {
 		$("[data-sound]")
 			.on("mouseenter", function() {
 				pauseAudio();
@@ -96,8 +89,8 @@ function gifHoverThing() {
 		.on("mouseenter", function() {
 			const datagif = $(this).attr("data-gif");
 			$media.css("background-image", `url(img/${datagif}.gif)`);
-			// $project.hide();
-		}).on("mouseleave", function() {
+		})
+		.on("mouseleave", function() {
 			$media.css("background-image", "");
 			pauseAudio();
 		});
