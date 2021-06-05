@@ -125,11 +125,17 @@ blockquote p::after {
     padding-left: 3px;
 }
 
+blockquote p {
+    margin: 0 0 10px;
+}
+
 blockquote span.author {
-    color: #777;
+    background-color: #f3f3f3;
+    color: #555;
     font-size: 12px;
     font-weight: bold;
     margin: 10px 0;
+    padding: 3px 5px;
 }
 
 #text li {
